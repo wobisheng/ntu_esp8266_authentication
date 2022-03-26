@@ -21,7 +21,7 @@ void setup(){
   delay(1000);
   WiFiClient client;
   client.connect( host, 801 );
-  String request = (String) ("GET ") + "/eportal/?c=Portal&a=login&callback=dr1003&login_method=1&user_account=,1," + userid + "&user_password=" + password + "&wlan_user_ip=" + WiFi.localIP().toString() + " HTTP/1.1\r\n" +
+  String request = (String) ("GET ") + "/eportal/?c=Portal&a=login&callback=dr1003&login_method=1&user_account=," + device + "," + userid + "&user_password=" + password + "&wlan_user_ip=" + WiFi.localIP().toString() + " HTTP/1.1\r\n" +
        "Host: " + host + ":801" + "\n" +
        "Connection: Keep Alive\r\n\r\n";
   client.print( request );
@@ -31,7 +31,7 @@ void setup(){
   Serial.println("successed in getting session"); Serial.println(cookie);
   delay(1000);
   client.connect( host, 801 );
-  request = (String) ("GET ") + "/eportal/?c=Portal&a=login&callback=dr1003&login_method=1&user_account=,1," + userid + "&user_password=" + password + "&wlan_user_ip=" + WiFi.localIP().toString() +"&wlan_user_ipv6=&wlan_user_mac=000000000000&wlan_ac_ip=&wlan_ac_name=ME60&jsVersion=3.3.2&v=8322 HTTP/1.1\n" + +
+  request = (String) ("GET ") + "/eportal/?c=Portal&a=login&callback=dr1003&login_method=1&user_account=," + device + "," + userid + "&user_password=" + password + "&wlan_user_ip=" + WiFi.localIP().toString() +"&wlan_user_ipv6=&wlan_user_mac=000000000000&wlan_ac_ip=&wlan_ac_name=ME60&jsVersion=3.3.2&v=8322 HTTP/1.1\n" + +
        "Accept: */*" +
        "Accept-Encoding: gzip, deflate\n" +
        "Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6\n" +
