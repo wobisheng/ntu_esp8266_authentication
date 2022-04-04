@@ -7,7 +7,7 @@ const char* host = "210.29.79.141";
 String userid = "";//学号
 String password = "";//密码
 String device = "1";//1是移动端，0是PC端
-String Operator[4] = {"","@CMCC","@telecom","@unicom"};
+String Operator[4] = {"","@cmcc","@telecom","@unicom"};
 int port = 0;//校园网端口选择 0校园网 1中国移动 2中国电信 3中国联通
 
 void setup(){
